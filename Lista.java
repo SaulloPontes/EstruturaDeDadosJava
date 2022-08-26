@@ -1,7 +1,7 @@
 public class Lista {
 
-     int[] vetorElementos;
-     int numeroElementos;
+     private int[] vetorElementos;
+    private int numeroElementos;
 
     public Lista(int capacidade){
         this.numeroElementos = 0;
@@ -10,7 +10,7 @@ public class Lista {
 
 
     public boolean listaVazia(){
-        if (numeroElementos==0){
+        if (this.numeroElementos==0){
             return true;
         }else{
             return  false;
@@ -18,7 +18,7 @@ public class Lista {
     }
 
     public boolean listaCheia(){
-        if (numeroElementos>=vetorElementos.length){
+        if (this.numeroElementos>=this.vetorElementos.length){
             return true;
         }else{
             return false;
@@ -29,9 +29,9 @@ public class Lista {
             if(listaCheia()){
                 System.out.println("estrutura cheia");
             }else{
-                int indice = numeroElementos;
-                vetorElementos[indice] =elem;
-                numeroElementos = numeroElementos + 1;
+                int indice = this.numeroElementos;
+                this.vetorElementos[indice] =elem;
+                this.numeroElementos = numeroElementos + 1;
             }
     }
 
@@ -42,9 +42,9 @@ public class Lista {
         if (listaVazia()) {
             throw new Exception("estrutura vazia");
         } else {
-            int indice = numeroElementos - 1;
-            int elementoRemovido = vetorElementos[indice];
-            numeroElementos =  indice;
+            int indice = this.numeroElementos - 1;
+            int elementoRemovido = this.vetorElementos[indice];
+            this.numeroElementos =  indice;
             return  elementoRemovido;
         }
 
@@ -54,11 +54,11 @@ public class Lista {
         if(listaCheia()){
             System.out.println("estrutura cheia");
         }else{
-            for(int indice = numeroElementos;indice>0;indice--){
-                vetorElementos[indice] = vetorElementos[indice-1];
+            for(int indice = this.numeroElementos;indice>0;indice--){
+                this.vetorElementos[indice] = this.vetorElementos[indice-1];
             }
-            vetorElementos[0] = elem;
-            numeroElementos = numeroElementos +1;
+            this.vetorElementos[0] = elem;
+            this.numeroElementos ++;
         }
     }
 
@@ -66,11 +66,11 @@ public class Lista {
         if(listaVazia()){
             throw new Exception("estrutura vazia");
         }else{
-            int elementoRemovido = vetorElementos[0];
-            for(int indice =1;indice<numeroElementos;indice++){
-                vetorElementos[indice-1] = vetorElementos[indice];
+            int elementoRemovido = this.vetorElementos[0];
+            for(int indice =1;indice<this.numeroElementos;indice++){
+                this.vetorElementos[indice-1] = this.vetorElementos[indice];
             }
-            numeroElementos = numeroElementos - 1;
+            this.numeroElementos --;
             return  elementoRemovido;
         }
     }
@@ -80,15 +80,15 @@ public class Lista {
             System.out.println("estrutura cheia");
         }else{
             if(i<=0){
-                adicionarInicio(elem);
+                this.adicionarInicio(elem);
             }else if(i>=numeroElementos){
-                adicionarFinal(elem);
+                this.adicionarFinal(elem);
             }else{
-                for(int indice=numeroElementos;indice>i;indice--){
-                    vetorElementos[indice] = vetorElementos[indice-1];
+                for(int indice=this.numeroElementos;indice>i;indice--){
+                    this.vetorElementos[indice] = this.vetorElementos[indice-1];
                 }
-                vetorElementos[i] = elem;
-                numeroElementos = numeroElementos + 1;
+                this.vetorElementos[i] = elem;
+                this.numeroElementos ++;
             }
         }
     }
@@ -98,15 +98,15 @@ public class Lista {
             throw new Exception("estrutura vazia");
         }else{
             if(i<=0){
-                return removerInicio();
-            }else if(i>=numeroElementos){
-                return removerFinal();
+                return this.removerInicio();
+            }else if(i>=this.numeroElementos){
+                return this.removerFinal();
             }else{
-                int elementoRemovido = vetorElementos[i];
-                for(int indice =i;indice<numeroElementos-1;indice++){
-                    vetorElementos[indice] = vetorElementos[indice+1];
+                int elementoRemovido = this.vetorElementos[i];
+                for(int indice =i;indice<this.numeroElementos-1;indice++){
+                    this.vetorElementos[indice] = this.vetorElementos[indice+1];
                 }
-                numeroElementos = numeroElementos-1;
+                this.numeroElementos --;
                 return  elementoRemovido;
 
             }

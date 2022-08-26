@@ -112,3 +112,53 @@ public class Lista {
             }
         }
     }
+    //----------------------------------------------------------------------------------------------------------
+    public int meioVetor() throws Exception   {
+
+        int indice = 0;
+
+        if(this.numeroElementos%2==1){
+            indice = (this.numeroElementos-1)/2;
+            return this.vetorElementos[indice];
+        }else{
+            throw new Exception("quantidade par de elementos");
+        }
+
+    }
+
+    public void trocarPrimComUlti() throws Exception {
+        if(!listaVazia()){
+            int primeiro = this.removerInicio();
+            int ultimo = this.removerFinal();
+            this.adicionarInicio(ultimo);
+            this.adicionarFinal(primeiro);
+        }else{
+            throw new Exception("lista vazia");
+        }
+
+    }
+
+    public int verPosicao(int pos) throws Exception{
+
+      if(pos>numeroElementos-1 && numeroElementos!=0){
+          throw new Exception("posicao invalida");
+      }else{
+          if(!listaVazia()){
+              return vetorElementos[pos];
+          }else {
+              throw new Exception("lista vazia");
+          }
+      }
+
+
+    }
+
+    public  void verLista(){
+        for(int indice =0;indice<this.numeroElementos;indice++){
+            System.out.println(this.vetorElementos[indice]);
+        }
+    }
+
+}
+
+

@@ -67,7 +67,7 @@ public class Lista {
             throw new Exception("estrutura vazia");
         }else{
             int elementoRemovido = vetorElementos[0];
-            for(int indice =1;indice<numeroElementos-1;indice++){
+            for(int indice =1;indice<numeroElementos;indice++){
                 vetorElementos[indice-1] = vetorElementos[indice];
             }
             numeroElementos = numeroElementos - 1;
@@ -112,7 +112,3 @@ public class Lista {
             }
         }
     }
-
-}
-
-

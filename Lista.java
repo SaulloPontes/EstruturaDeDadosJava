@@ -153,6 +153,23 @@ public class Lista {
 
     }
 
+    public  void reverterLista() throws Exception {
+
+        int  fim;
+        int cont =0;
+        for(int i = this.numeroElementos-1 ;i>=0;i--){
+
+            fim= this.removerFinal();
+
+            this.adicionarPosicao(fim,cont);
+
+            cont++;
+        }
+
+    }
+
+
+
     public  void verLista(){
         for(int indice =0;indice<this.numeroElementos;indice++){
             System.out.println(this.vetorElementos[indice]);

@@ -168,6 +168,18 @@ public class Lista {
 
     }
 
+    public  void removerRepetidos() throws Exception {
+
+        int elem;
+        for(int i = 0;i<this.numeroElementos;i++){
+            elem = this.vetorElementos[i];
+            for(int ind = i+1;ind<this.numeroElementos;ind++){
+                if(elem==this.vetorElementos[ind]){
+                    this.removerPosicao(ind);
+                }
+            }
+        }
+    }
 
 
     public  void verLista(){

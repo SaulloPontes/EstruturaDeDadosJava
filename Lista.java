@@ -153,7 +153,7 @@ public class Lista {
 
     }
 
-    public  void reverterLista() throws Exception {
+    public  void inverterLista() throws Exception {
 
         int  fim;
         int cont =0;

@@ -35,4 +35,31 @@ public class ListaEncadeada {
         }
     }
 
+    public Nó Remover_Inicio(){
+        Nó removido = null;
+        if(Lista_vazia()){
+            System.out.println("Estrutura vazia");
+        }else{
+            removido = inicio_lista;
+            inicio_lista = inicio_lista.proximo_no;
+        }
+        return removido;
+    }
+
+    public  Nó Remover_final(){
+        Nó removido = null;
+        Nó auxiliar;
+        if(Lista_vazia()){
+            System.out.println("estrutura vazia");
+        }else{
+            removido = auxiliar = inicio_lista;
+            while (removido.proximo_no!=null){
+                auxiliar = removido;
+                removido = removido.proximo_no;
+            }
+            auxiliar.proximo_no = null;
+        }
+        return removido;
+    }
+
 }

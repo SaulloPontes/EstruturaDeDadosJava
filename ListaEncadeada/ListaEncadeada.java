@@ -1,6 +1,6 @@
 public class ListaEncadeada {
 
-    private Nó inicio_lista;
+     Nó inicio_lista;
 
     public  ListaEncadeada(){
         inicio_lista = null;
@@ -60,6 +60,26 @@ public class ListaEncadeada {
             auxiliar.proximo_no = null;
         }
         return removido;
+    }
+
+    public void Adicionar_posicao(int e,int i){
+        if(Lista_vazia() || i<=1){
+            Adicionar_inicio(e);
+        }else{
+            Nó novo = new Nó(e);
+            Nó auxiliar = inicio_lista;
+            int indice = 1;
+            while(indice<i && auxiliar!=null){
+                auxiliar = auxiliar.proximo_no;
+                indice = indice + 1;
+            }
+            if(auxiliar==null){
+                Adicionar_final(e);
+            }else{
+                novo.proximo_no = auxiliar.proximo_no;
+                auxiliar.proximo_no = novo;
+            }
+        }
     }
 
 }

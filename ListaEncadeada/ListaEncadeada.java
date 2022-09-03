@@ -82,4 +82,28 @@ public class ListaEncadeada {
         }
     }
 
+
+    public Nó removerPosicao(int i){
+        Nó removido = null;
+        Nó auxiliar;
+        int indice =1;
+        if(Lista_vazia() || i<=1){
+            removido = Remover_Inicio();
+        }else{
+            removido = auxiliar = inicio_lista;
+
+            while (indice<i && removido!=null){
+                auxiliar = removido;
+                removido = removido.proximo_no;
+                indice++;
+            }
+            if(removido==null){
+                removido = Remover_final();
+            }else{
+                auxiliar.proximo_no = removido.proximo_no;
+            }
+        }
+        return removido;
+    }
+
 }

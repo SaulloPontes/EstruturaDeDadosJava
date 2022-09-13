@@ -140,11 +140,14 @@ public class Lista {
 
     public int verPosicao(int pos) throws Exception{
 
+        int removerPosicao = this.removerPosicao(pos);
+        this.adicionarPosicao(removerPosicao,pos);
+
       if(pos>numeroElementos-1 && numeroElementos!=0){
           throw new Exception("posicao invalida");
       }else{
           if(!listaVazia()){
-              return vetorElementos[pos];
+              return removerPosicao;
           }else {
               throw new Exception("lista vazia");
           }
@@ -188,12 +191,13 @@ public class Lista {
         }
     }
 
-
+     /*
     public  void verLista() throws Exception {
         for(int indice =0;indice<this.numeroElementos;indice++){
             System.out.println(this.verPosicao(indice));
         }
     }
+    */
 
 }
 

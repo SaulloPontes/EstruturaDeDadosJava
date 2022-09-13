@@ -108,4 +108,33 @@ public class ListaEncadeada {
 
 
 
+    //----------------------------------------------------------
+    public  Nó ultimo_elemento(){
+
+        Nó ult =this.Remover_final();
+        int x = ult.elemento_armazenado;
+        this.Adicionar_final(x);
+
+        return   ult;
+    }
+
+    public  Nó penultimo_elemento(){
+
+        Nó ult =this.Remover_final();
+        Nó penu =this.Remover_final();
+        int valorUlt = ult.elemento_armazenado;
+        int valorPenu = penu.elemento_armazenado;
+        this.Adicionar_final(valorPenu);
+        this.Adicionar_final(valorUlt);
+
+        return penu;
+    }
+
+    public Nó retornar_posicao(int pos){
+
+       Nó removido = this.removerPosicao(pos);
+       int posicaoElemento = removido.elemento_armazenado;
+       this.Adicionar_posicao(posicaoElemento,pos);
+       return removido;
+    }
 }

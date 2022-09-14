@@ -137,4 +137,38 @@ public class ListaEncadeada {
        this.Adicionar_posicao(posicaoElemento,pos);
        return removido;
     }
+
+    public  void  inverter_lista(){
+
+        Nó noAtual;
+        int cont = 0;
+        int contInver = 0;
+        noAtual = inicio_lista;
+
+        while(noAtual != null){
+            cont++;
+            noAtual = noAtual.proximo_no;
+
+        }
+
+        for(int i = cont;i>0;i--){
+
+            Nó ultimo = removerPosicao(i);
+            int elem = ultimo.elemento_armazenado;
+            this.Adicionar_posicao(elem,contInver);
+            contInver++;
+        }
+
+    }
+    
+    /*
+    public void verLista(){
+        Nó noAtual;
+        noAtual = inicio_lista;
+        while(noAtual != null){
+            System.out.println(noAtual.elemento_armazenado);
+            noAtual = noAtual.proximo_no;
+        }
+    }
+*/
 }

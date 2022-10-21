@@ -25,31 +25,28 @@ public class PilhaEstatica {
         }
     }
 
-    public void adicionarInicio(int elem){
+   public void adicionarFinal(int elem){
         if(listaCheia()){
             System.out.println("estrutura cheia");
         }else{
-            for(int indice = this.numeroElementos;indice>0;indice--){
-                this.vetorElementos[indice] = this.vetorElementos[indice-1];
-            }
-            this.vetorElementos[0] = elem;
-            this.numeroElementos ++;
+            int indice = this.numeroElementos;
+            this.vetorElementos[indice] =elem;
+            this.numeroElementos = numeroElementos + 1;
         }
     }
+    
+    public  int  removerFinal() throws Exception {
 
-    public  int removerInicio() throws Exception {
-        if(listaVazia()){
+        if (listaVazia()) {
             throw new Exception("estrutura vazia");
-        }else{
-            int elementoRemovido = this.vetorElementos[0];
-            for(int indice =1;indice<this.numeroElementos;indice++){
-                this.vetorElementos[indice-1] = this.vetorElementos[indice];
-            }
-            this.numeroElementos --;
+        } else {
+            int indice = this.numeroElementos - 1;
+            int elementoRemovido = this.vetorElementos[indice];
+            this.numeroElementos =  indice;
             return  elementoRemovido;
         }
-    }
 
+    }
 
 
 }

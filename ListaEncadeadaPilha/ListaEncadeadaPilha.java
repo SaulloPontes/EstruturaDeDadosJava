@@ -1,25 +1,26 @@
 public class ListaEncadeadaPilha {
 
-    Nó inicio_lista;
+    Nó inicio_pilha;
 
     public  ListaEncadeadaPilha(){
-        inicio_lista = null;
+        inicio_pilha = null;
     }
 
     public boolean Lista_vazia(){
-        if(this.inicio_lista==null){
+        if(this.inicio_pilha ==null){
             return  true;
+            
         }else {
             return false;
         }
     }
 
-     public  void  Adicionar_final(int e){
+    public  void  empilhar(int e){
         Nó novo = new Nó(e);
         if(Lista_vazia()){
-            inicio_lista = novo;
+            inicio_pilha = novo;
         }else{
-            Nó auxiliar = inicio_lista;
+            Nó auxiliar = inicio_pilha;
             while (auxiliar.proximo_no!=null){
                 auxiliar = auxiliar.proximo_no;
             }
@@ -28,13 +29,13 @@ public class ListaEncadeadaPilha {
     }
 
 
-    public  Nó Remover_final(){
+    public  Nó desempilhar(){
         Nó removido = null;
         Nó auxiliar;
         if(Lista_vazia()){
-            System.out.println("estrutura vazia");
+            System.out.println("pilha vazia");
         }else{
-            removido = auxiliar = inicio_lista;
+            removido = auxiliar = inicio_pilha;
             while (removido.proximo_no!=null){
                 auxiliar = removido;
                 removido = removido.proximo_no;
@@ -44,6 +45,5 @@ public class ListaEncadeadaPilha {
         return removido;
     }
 
-
-
+    
 }

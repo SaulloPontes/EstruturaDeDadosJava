@@ -9,7 +9,7 @@ public class FilaEstatica {
     }
 
 
-    public boolean listaVazia(){
+    public boolean filaVazia(){
         if (this.numeroElementos==0){
             return true;
         }else{
@@ -17,7 +17,7 @@ public class FilaEstatica {
         }
     }
 
-    public boolean listaCheia(){
+    public boolean filaCheia(){
         if (this.numeroElementos>=this.vetorElementos.length){
             return true;
         }else{
@@ -25,9 +25,9 @@ public class FilaEstatica {
         }
     }
 
-    public void adicionarFinal(int elem){
-        if(listaCheia()){
-            System.out.println("estrutura cheia");
+    public void entrarNaFila(int elem){
+        if(filaCheia()){
+            System.out.println("Fila cheia");
         }else{
             int indice = this.numeroElementos;
             this.vetorElementos[indice] =elem;
@@ -35,11 +35,11 @@ public class FilaEstatica {
         }
     }
 
-    
 
-    public  int removerInicio() throws Exception {
-        if(listaVazia()){
-            throw new Exception("estrutura vazia");
+
+    public  int sairDaFila() throws Exception {
+        if(filaVazia()){
+            throw new Exception("Fila vazia");
         }else{
             int elementoRemovido = this.vetorElementos[0];
             for(int indice =1;indice<this.numeroElementos;indice++){
@@ -53,5 +53,4 @@ public class FilaEstatica {
 
 
 }
-
 

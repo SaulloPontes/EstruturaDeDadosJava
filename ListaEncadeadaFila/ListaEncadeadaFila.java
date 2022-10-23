@@ -1,13 +1,14 @@
 public class ListaEncadeadaFila {
 
-    Nó inicio_lista;
+    Nó inicio_fila;
 
     public  ListaEncadeadaFila(){
-        inicio_lista = null;
+        inicio_fila = null;
     }
 
-    public boolean Lista_vazia(){
-        if(this.inicio_lista==null){
+    public boolean fila_vazia(){
+
+        if(this.inicio_fila ==null){
             return  true;
         }else {
             return false;
@@ -15,12 +16,12 @@ public class ListaEncadeadaFila {
     }
 
 
-    public  void  Adicionar_final(int e){
+    public  void entrarNaFila(int e){
         Nó novo = new Nó(e);
-        if(Lista_vazia()){
-            inicio_lista = novo;
+        if(fila_vazia()){
+            inicio_fila = novo;
         }else{
-            Nó auxiliar = inicio_lista;
+            Nó auxiliar = inicio_fila;
             while (auxiliar.proximo_no!=null){
                 auxiliar = auxiliar.proximo_no;
             }
@@ -28,13 +29,13 @@ public class ListaEncadeadaFila {
         }
     }
 
-    public Nó Remover_Inicio(){
+    public Nó sairDaFila(){
         Nó removido = null;
-        if(Lista_vazia()){
-            System.out.println("Estrutura vazia");
+        if(fila_vazia()){
+            System.out.println("Fila vazia");
         }else{
-            removido = inicio_lista;
-            inicio_lista = inicio_lista.proximo_no;
+            removido = inicio_fila;
+            inicio_fila = inicio_fila.proximo_no;
         }
         return removido;
     }

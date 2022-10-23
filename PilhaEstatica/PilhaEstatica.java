@@ -9,7 +9,7 @@ public class PilhaEstatica {
     }
 
 
-    public boolean listaVazia(){
+    public boolean pilhaVazia(){
         if (this.numeroElementos==0){
             return true;
         }else{
@@ -17,7 +17,7 @@ public class PilhaEstatica {
         }
     }
 
-    public boolean listaCheia(){
+    public boolean pilhaCheia(){
         if (this.numeroElementos>=this.vetorElementos.length){
             return true;
         }else{
@@ -25,8 +25,8 @@ public class PilhaEstatica {
         }
     }
 
-   public void adicionarFinal(int elem){
-        if(listaCheia()){
+    public void empilhar(int elem){
+        if(pilhaCheia()){
             System.out.println("estrutura cheia");
         }else{
             int indice = this.numeroElementos;
@@ -34,10 +34,10 @@ public class PilhaEstatica {
             this.numeroElementos = numeroElementos + 1;
         }
     }
-    
-    public  int  removerFinal() throws Exception {
 
-        if (listaVazia()) {
+    public  int desempilhar() throws Exception {
+
+        if (pilhaVazia()) {
             throw new Exception("estrutura vazia");
         } else {
             int indice = this.numeroElementos - 1;
